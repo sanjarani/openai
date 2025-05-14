@@ -71,6 +71,8 @@ class Client implements OpenAIClientContract
                 $headers[$key] = $value;
             }
         }
+        $headers['OpenAI-Beta'] = 'assistants=v2';
+
         return $headers;
     }
 
