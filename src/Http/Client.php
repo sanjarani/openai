@@ -76,10 +76,11 @@ class Client implements OpenAIClientContract
 
     public function get(string $uri, array $query = [], ?string $baseUrlOverride = null): array|string
     {
-        if ($uri === "files/{$query["file_id_for_content"]}/content") {
+        if (isset($query["file_id_for_content"]) && $uri === "files/{$query["file_id_for_content"]}/content") {
             unset($query["file_id_for_content"]);
             return $this->requestRaw("GET", $uri, ["query" => $query], [], $baseUrlOverride);
         }
+
         return $this->requestJson("GET", $uri, ["query" => $query], false, $baseUrlOverride);
     }
 
