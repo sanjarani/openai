@@ -1,0 +1,37 @@
+{
+    "name": "sanjarani/openai",
+    "description": "A comprehensive Laravel 12 package for interacting with the OpenAI API, including advanced features like Assistants, Vector Stores, and optimization techniques.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kiyarash Sanjarani Vahed",
+            "email": "kiyarash.sanjarani@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sanjarani\\OpenAI\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sanjarani\\OpenAI\\OpenAIServiceProvider"
+            ],
+            "aliases": {
+                "OpenAI": "Sanjarani\\OpenAI\\Facades\\OpenAI"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
